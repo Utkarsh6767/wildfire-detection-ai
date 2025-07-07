@@ -1,0 +1,18 @@
+{
+  "name": "forest-wildfire-detection",
+  "version": "1.0.0",
+  "description": "Forest Wildfire Detection Using Satellite Images (ML + Flask Web App)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["wildfire", "detection", "machine-learning", "flask", "satellite-images"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.2"
+  },
+  "dependencies": {}
+}

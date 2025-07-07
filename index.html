@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Forest Wildfire Detection System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="floating-particles"></div>
+    </div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-fire-flame-curved"></i>
+                <span>WildfireAI</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#stats" class="nav-link">Statistics</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="hero-section" id="home">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-satellite"></i>
+                    <span>AI-Powered Detection</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="gradient-text">Forest Wildfire</span>
+                    <span>Detection System</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Advanced machine learning algorithms analyze satellite imagery in real-time to detect and predict wildfire risks with unprecedented accuracy.
+                </p>
+                <div class="hero-actions">
+                    <button class="upload-action-btn" onclick="window.location.href='upload.html'">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Upload & Analyze</span>
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="99.2">0</div>
+                        <div class="stat-label">Accuracy Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15000">0</div>
+                        <div class="stat-label">Images Analyzed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="847">0</div>
+                        <div class="stat-label">Fires Detected</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="satellite-container">
+                    <div class="satellite">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <div class="scan-lines"></div>
+                    <div class="radar-sweep"></div>
+                </div>
+            </div>
+        </header>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-chart-bar"></i> Performance Metrics</h4>
+                    <div class="metrics-list">
+                        <div class="metric">
+                            <span>Response Time</span>
+                            <strong>&lt; 2.5s</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Model Accuracy</span>
+                            <strong>99.2%</strong>
+                        </div>
+                        <div class="metric">
+                            <span>False Positive Rate</span>
+                            <strong>&lt; 0.8%</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WildfireAI Detection System. Powered by Advanced Machine Learning.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

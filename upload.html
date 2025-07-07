@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload & Analyze - AI Forest Wildfire Detection System</title>
+    <link rel="stylesheet" href="upload-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="floating-particles"></div>
+    </div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-fire-flame-curved"></i>
+                <span>WildfireAI</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#upload" class="nav-link active">Upload & Analyze</a>
+                <a href="index.html#stats" class="nav-link">Statistics</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Upload & Analyze</span>
+                </div>
+                <h1 class="page-title">
+                    <span class="gradient-text">Upload & Analyze</span>
+                    <span>Satellite Images</span>
+                </h1>
+                <p class="page-subtitle">
+                    Upload your satellite imagery and let our advanced AI system detect wildfire risks with precision and speed.
+                </p>
+            </div>
+        </header>
+        
+        <main class="upload-main">
+            <section class="upload-section" id="upload">
+                <div class="upload-container">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-content">
+                            <div class="upload-icon-container">
+                                <div class="upload-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <div class="upload-ripple"></div>
+                            </div>
+                            <h3>Drop your satellite image here</h3>
+                            <p>or click to browse your files</p>
+                            <div class="supported-formats">
+                                <span>JPG</span>
+                                <span>PNG</span>
+                                <span>TIFF</span>
+                                <span>GeoTIFF</span>
+                            </div>
+                            <input type="file" id="fileInput" accept="image/*" hidden>
+                            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                                <i class="fas fa-folder-open"></i>
+                                Choose File
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-section" id="previewSection" style="display: none;">
+                        <div class="image-container">
+                            <img id="imagePreview" alt="Preview">
+                            <div class="image-overlay">
+                                <div class="image-info">
+                                    <i class="fas fa-image"></i>
+                                    <span id="fileName"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="analyze-btn" id="analyzeBtn">
+                                <i class="fas fa-brain"></i>
+                                <span>Analyze with AI</span>
+                                <div class="btn-glow"></div>
+                            </button>
+                            <button class="reset-btn" id="resetBtn">
+                                <i class="fas fa-redo"></i>
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-container">
+                    <div class="results-header">
+                        <h3><i class="fas fa-chart-line"></i> Analysis Results</h3>
+                    </div>
+                    
+                    <div class="prediction-result" id="predictionResult">
+                        <div class="loading-container" id="loading">
+                            <div class="ai-brain">
+                                <div class="brain-core"></div>
+                                <div class="neural-network">
+                                    <div class="neuron"></div>
+                                    <div class="neuron"></div>
+                                    <div class="neuron"></div>
+                                    <div class="neuron"></div>
+                                </div>
+                            </div>
+                            <div class="loading-text">
+                                <h4>AI Analysis in Progress</h4>
+                                <p id="loadingStatus">Initializing neural network...</p>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progressFill"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-content" id="resultContent" style="display: none;">
+                            <div class="result-grid">
+                                <div class="confidence-card">
+                                    <h4>Confidence Level</h4>
+                                    <div class="confidence-circle">
+                                        <svg class="progress-ring" width="120" height="120">
+                                            <circle class="progress-ring-bg" cx="60" cy="60" r="54"></circle>
+                                            <circle class="progress-ring-fill" cx="60" cy="60" r="54" id="confidenceCircle"></circle>
+                                        </svg>
+                                        <div class="confidence-text" id="confidenceText">0%</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="prediction-card">
+                                    <div class="prediction-icon" id="predictionIcon">
+                                        <i class="fas fa-question"></i>
+                                    </div>
+                                    <div class="prediction-details">
+                                        <h4 id="predictionTitle">Analyzing...</h4>
+                                        <p class="prediction-text" id="predictionText"></p>
+                                        <div class="risk-indicators" id="riskIndicators"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="additional-info">
+                                <div class="info-tabs">
+                                    <button class="tab-btn active" data-tab="details">Details</button>
+                                    <button class="tab-btn" data-tab="recommendations">Recommendations</button>
+                                    <button class="tab-btn" data-tab="metadata">Metadata</button>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-panel active" id="details">
+                                        <div class="detail-items" id="detailItems"></div>
+                                    </div>
+                                    <div class="tab-panel" id="recommendations">
+                                        <div class="recommendation-list" id="recommendationList"></div>
+                                    </div>
+                                    <div class="tab-panel" id="metadata">
+                                        <div class="metadata-grid" id="metadataGrid"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-chart-bar"></i> Performance Metrics</h4>
+                    <div class="metrics-list">
+                        <div class="metric">
+                            <span>Response Time</span>
+                            <strong>&lt; 2.5s</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Model Accuracy</span>
+                            <strong>99.2%</strong>
+                        </div>
+                        <div class="metric">
+                            <span>False Positive Rate</span>
+                            <strong>&lt; 0.8%</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WildfireAI Detection System. Powered by Advanced Machine Learning.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="upload-script.js"></script>
+</body>
+</html>
